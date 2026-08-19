@@ -1,0 +1,46 @@
+<section class="page-banner">
+  <div class="container">
+    <span class="eyebrow">Industries We Serve</span>
+    <h1>A Versatile Logistics Partner</h1>
+    <p>ARKA Logistics caters to a wide array of industries, backed by expertise in managing diverse products and requirements.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-auto industries-grid">
+      @for (industry of industries; track industry.name) {
+        <arka-industry-card [icon]="industry.icon" [name]="industry.name"></arka-industry-card>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark reach-section">
+  <div class="container reach-grid">
+    <div arkaReveal>
+      <span class="eyebrow">Expanding Across India</span>
+      <h2>Building a Pan-India Logistics Network</h2>
+      <p>
+        ARKA Logistics aims to establish strong partnerships with reliable carriers and logistics
+        providers across India. As our network grows, we intend to offer increasingly seamless
+        national logistics solutions to enterprise clients.
+      </p>
+    </div>
+    <div class="reach-map" arkaReveal aria-hidden="true">
+      <div class="reach-map__outline">🇮🇳</div>
+      <span class="reach-map__pin" style="top: 22%; left: 45%;"></span>
+      <span class="reach-map__pin" style="top: 48%; left: 62%;"></span>
+      <span class="reach-map__pin" style="top: 62%; left: 40%;"></span>
+      <span class="reach-map__pin" style="top: 35%; left: 30%;"></span>
+      <p class="reach-map__caption">Illustrative — expanding across India</p>
+    </div>
+  </div>
+</section>
+
+<arka-cta
+  heading="Looking for an Industry-Specific Logistics Partner?"
+  text="Whether it's IT, pharma, FMCG or e-commerce, tell us what your business needs."
+  primaryLabel="Talk to ARKA"
+  secondaryLabel="View Our Services"
+></arka-cta>

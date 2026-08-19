@@ -1,0 +1,343 @@
+/* =================================
+   NAVBAR
+   ================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    background: transparent;
+    transition: background var(--transition), box-shadow var(--transition), height var(--transition);
+}
+
+
+/* =================================
+   SCROLLED NAVBAR
+   ================================= */
+
+.navbar--scrolled {
+    background: rgba(11, 41, 66, 0.96);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    height: 68px;
+}
+
+
+/* =================================
+   NAVBAR INNER
+   ================================= */
+
+.navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+/* =================================
+   ARKA LOGISTICS BRANDING
+   ================================= */
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--arka-white);
+    flex-shrink: 0;
+}
+
+
+/* =================================
+   LOGO IMAGE
+   ================================= */
+
+.navbar__logo-image {
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+
+/* =================================
+   BRAND NAME
+   ARKA
+   LOGISTICS
+   ================================= */
+
+.navbar__logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+    white-space: nowrap;
+    font-family: var(--font-display);
+}
+
+
+/* ARKA */
+
+.navbar__logo-arka {
+    font-size: 1.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--arka-white);
+    margin-bottom: 5px;
+}
+
+
+/* LOGISTICS */
+
+.navbar__logo-logistics {
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: var(--arka-gold);
+}
+
+
+/* =================================
+   SCROLLED BRANDING
+   ================================= */
+
+.navbar--scrolled .navbar__logo-image {
+    width: 58px;
+    height: 58px;
+}
+
+.navbar--scrolled .navbar__logo-arka {
+    font-size: 1.3rem;
+}
+
+.navbar--scrolled .navbar__logo-logistics {
+    font-size: 0.85rem;
+}
+
+
+/* =================================
+   NAVIGATION LINKS
+   ================================= */
+
+.navbar__links {
+    display: none;
+    gap: 28px;
+    align-items: center;
+
+    a {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.92rem;
+        font-weight: 600;
+        position: relative;
+        padding: 8px 0;
+        transition: color var(--transition);
+    }
+
+        a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--arka-gold);
+            transition: width var(--transition);
+        }
+
+        a:hover,
+        a.is-active {
+            color: var(--arka-white);
+        }
+
+            a:hover::after,
+            a.is-active::after {
+                width: 100%;
+            }
+}
+
+
+/* =================================
+   CONTACT BUTTON
+   ================================= */
+
+.navbar__cta {
+    display: none;
+}
+
+
+/* =================================
+   MOBILE MENU TOGGLE
+   ================================= */
+
+.navbar__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    padding: 8px;
+
+    span {
+        width: 24px;
+        height: 2px;
+        background: var(--arka-white);
+        border-radius: 2px;
+        transition: transform var(--transition), opacity var(--transition);
+    }
+}
+
+
+/* Hamburger → X */
+
+.navbar--open .navbar__toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar--open .navbar__toggle span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar--open .navbar__toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =================================
+   MOBILE NAVIGATION
+   ================================= */
+
+.navbar__mobile {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--arka-navy-deep);
+    transform: translateX(100%);
+    transition: transform var(--transition);
+    overflow-y: auto;
+}
+
+    .navbar__mobile.is-open {
+        transform: translateX(0);
+    }
+
+
+    .navbar__mobile nav {
+        display: flex;
+        flex-direction: column;
+        padding: 32px 24px;
+        gap: 4px;
+
+        a {
+            color: var(--arka-white);
+            font-weight: 600;
+            font-size: 1.15rem;
+            padding: 16px 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+            a.is-active {
+                color: var(--arka-gold);
+            }
+
+        .btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
+
+
+/* =================================
+   DESKTOP
+   ================================= */
+
+@media (min-width: 1024px) {
+
+    .navbar__links {
+        display: flex;
+    }
+
+    .navbar__cta {
+        display: inline-flex;
+    }
+
+    .navbar__toggle {
+        display: none;
+    }
+}
+
+
+/* =================================
+   TABLET / SMALL DESKTOP
+   ================================= */
+
+@media (max-width: 1100px) and (min-width: 1024px) {
+
+    .navbar__logo {
+        gap: 10px;
+    }
+
+    .navbar__logo-image {
+        width: 68px;
+        height: 68px;
+    }
+
+    .navbar__logo-arka {
+        font-size: 1.4rem;
+    }
+
+    .navbar__logo-logistics {
+        font-size: 0.9rem;
+    }
+
+    .navbar__links {
+        gap: 20px;
+    }
+}
+
+
+/* =================================
+   MOBILE
+   ================================= */
+
+@media (max-width: 767px) {
+
+    .navbar__logo {
+        gap: 8px;
+    }
+
+    .navbar__logo-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .navbar__logo-arka {
+        font-size: 1.25rem;
+    }
+
+    .navbar__logo-logistics {
+        font-size: 0.75rem;
+        letter-spacing: 0.16em;
+    }
+
+    .navbar--scrolled .navbar__logo-image {
+        width: 52px;
+        height: 52px;
+    }
+
+    .navbar--scrolled .navbar__logo-arka {
+        font-size: 1.1rem;
+    }
+
+    .navbar--scrolled .navbar__logo-logistics {
+        font-size: 0.68rem;
+    }
+}

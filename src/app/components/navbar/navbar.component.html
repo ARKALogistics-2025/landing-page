@@ -1,0 +1,50 @@
+<header class="navbar" [class.navbar--scrolled]="scrolled()" [class.navbar--open]="menuOpen()">
+  <div class="container navbar__inner">
+      <a routerLink="/" class="navbar__logo" (click)="closeMenu()">
+
+          <div class="navbar__logo-image-wrap">
+              <img src="/assets/logo/arka-logo.png"
+                   alt="ARKA Logistics"
+                   class="navbar__logo-image" />
+          </div>
+
+          <div class="navbar__logo-text">
+              <span class="navbar__logo-arka">ARKA</span>
+              <span class="navbar__logo-logistics">LOGISTICS</span>
+          </div>
+
+      </a>
+
+    <nav class="navbar__links" aria-label="Primary">
+      @for (link of links; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+        >{{ link.label }}</a>
+      }
+    </nav>
+
+    <a routerLink="/contact" class="btn btn-primary navbar__cta">Get in Touch</a>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-menu"
+      aria-label="Toggle navigation menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="navbar__mobile" [class.is-open]="menuOpen()">
+    <nav aria-label="Mobile">
+      @for (link of links; track link.path) {
+        <a [routerLink]="link.path" routerLinkActive="is-active" (click)="closeMenu()">{{ link.label }}</a>
+      }
+      <a routerLink="/contact" class="btn btn-primary" (click)="closeMenu()">Get in Touch</a>
+    </nav>
+  </div>
+</header>

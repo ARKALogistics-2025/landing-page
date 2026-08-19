@@ -1,0 +1,48 @@
+<section class="page-banner">
+  <div class="container">
+    <span class="eyebrow">Employee Transportation</span>
+    <h1>Smarter Employee Transportation</h1>
+    <p>Technology-enabled employee transportation designed around safety, reliability and employee experience.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <arka-section-heading
+      eyebrow="Capabilities"
+      heading="Everything Your Workforce Transportation Needs"
+      [center]="true"
+    ></arka-section-heading>
+    <div class="grid-auto">
+      @for (item of features; track item.title) {
+        <arka-feature-card [icon]="item.icon" [title]="item.title" [description]="item.description"></arka-feature-card>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section safety-section">
+  <div class="container safety-grid">
+    <div arkaReveal>
+      <span class="eyebrow">Safety Comes First</span>
+      <h2>Built Around Employee Safety</h2>
+      <p>
+        Employee wellbeing is central to how we design our transportation services. We combine
+        monitoring, communication and process discipline to support a safer commute — while we
+        continue to make realistic, ongoing improvements rather than guarantees.
+      </p>
+    </div>
+    <ul class="safety-list" arkaReveal>
+      @for (point of safetyPoints; track point) {
+        <li><span aria-hidden="true">✓</span>{{ point }}</li>
+      }
+    </ul>
+  </div>
+</section>
+
+<arka-cta
+  heading="Talk to Our Transportation Team"
+  text="Let's design an employee transportation solution tailored to your organization."
+  primaryLabel="Talk to Our Transportation Team"
+  secondaryLabel="View All Services"
+></arka-cta>

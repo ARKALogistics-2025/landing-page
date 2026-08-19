@@ -1,0 +1,189 @@
+/* ============================================================
+   ARKA LOGISTICS — GLOBAL DESIGN SYSTEM
+   ============================================================ */
+
+:root {
+  /* Brand colors */
+  --arka-navy: #0B2942;
+  --arka-navy-deep: #071A2B;
+  --arka-blue: #123E5C;
+  --arka-gold: #D9A441;
+  --arka-accent: #F7B94C;
+  --arka-white: #FFFFFF;
+  --arka-bg: #F5F7F9;
+  --arka-bg-alt: #ECF1F4;
+  --arka-text: #17212B;
+  --arka-text-muted: #4E5C68;
+  --arka-border: #E1E7EB;
+  --arka-green: #2E8B57;
+
+  /* Typography */
+  --font-display: 'Manrope', 'Inter', -apple-system, sans-serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+
+  /* Layout */
+  --container-max: 1280px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --shadow-soft: 0 8px 30px rgba(11, 41, 66, 0.08);
+  --shadow-strong: 0 20px 50px rgba(7, 26, 43, 0.25);
+  --nav-height: 76px;
+  --transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--arka-text);
+  background: var(--arka-white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  color: var(--arka-navy);
+  letter-spacing: -0.01em;
+}
+
+p { line-height: 1.7; color: var(--arka-text-muted); margin: 0 0 1em; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+button { font-family: var(--font-body); cursor: pointer; }
+
+.app-loading {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--arka-navy);
+  z-index: 9999;
+}
+.app-loading__mark {
+  color: var(--arka-gold);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.2em;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 18px; }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+  white-space: nowrap;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--arka-accent);
+  outline-offset: 2px;
+}
+.btn-primary {
+  background: var(--arka-gold);
+  color: var(--arka-navy-deep);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(217, 164, 65, 0.35); }
+.btn-outline {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--arka-white);
+}
+.btn-outline:hover { border-color: var(--arka-white); background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+.btn-outline-dark {
+  background: transparent;
+  border-color: var(--arka-navy);
+  color: var(--arka-navy);
+}
+.btn-outline-dark:hover { background: var(--arka-navy); color: var(--arka-white); transform: translateY(-2px); }
+
+/* Section rhythm */
+.section { padding: 96px 0; }
+.section-alt { background: var(--arka-bg); }
+.section-dark { background: var(--arka-navy-deep); color: var(--arka-white); }
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+}
+
+/* Scroll-reveal utility (toggled by IntersectionObserver directive-free approach via class) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--arka-gold);
+  margin-bottom: 12px;
+}
+
+.grid-auto {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.page-banner {
+  padding: calc(var(--nav-height) + 64px) 0 56px;
+  background: radial-gradient(120% 120% at 15% 0%, var(--arka-blue) 0%, var(--arka-navy) 45%, var(--arka-navy-deep) 100%);
+  color: var(--arka-white);
+}
+.page-banner .eyebrow { color: var(--arka-gold); }
+.page-banner h1 { color: var(--arka-white); font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: 12px; }
+.page-banner p { color: rgba(255,255,255,0.75); font-size: 1.05rem; max-width: 640px; margin: 0; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

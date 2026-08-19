@@ -1,0 +1,41 @@
+<section class="hero">
+  <div class="hero__bg" aria-hidden="true">
+    @if (!prefersReducedMotion) {
+      <video
+        class="hero__video"
+        [poster]="posterUrl"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source [src]="videoUrl" type="video/mp4" />
+      </video>
+    } @else {
+      <img class="hero__video" [src]="posterUrl" alt="" />
+    }
+    <div class="hero__overlay"></div>
+    <div class="hero__grid-lines"></div>
+    <div class="hero__glow"></div>
+  </div>
+
+  <div class="container hero__content">
+    <span class="eyebrow hero__eyebrow">Integrated Logistics &amp; Employee Transportation</span>
+    <h1 class="hero__title">Smart Logistics for a Smarter India</h1>
+    <p class="hero__subtitle">
+      Integrated transport solutions powered by technology, safety and sustainable mobility.
+    </p>
+    <p class="hero__body">
+      ARKA Logistics delivers integrated transportation solutions across employee transportation,
+      freight, e-commerce, quick-commerce and last-mile logistics.
+    </p>
+
+    <div class="hero__actions">
+      <a routerLink="/contact" class="btn btn-primary">Get Started</a>
+      <a routerLink="/services" class="btn btn-outline">Explore Our Services</a>
+    </div>
+
+    
+  </div>
+</section>

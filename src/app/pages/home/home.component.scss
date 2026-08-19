@@ -1,0 +1,88 @@
+.about-preview__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-preview__mv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 28px 0 32px;
+
+  h3 { font-size: 1rem; margin-bottom: 8px; color: var(--arka-blue); }
+  p { font-size: 0.9rem; margin: 0; }
+}
+
+.about-preview__visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-preview__panel {
+  background: linear-gradient(135deg, var(--arka-navy), var(--arka-blue));
+  color: var(--arka-white);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: var(--font-display);
+  font-weight: 700;
+
+  span { font-size: 2rem; }
+}
+.about-preview__panel--1 { transform: translateX(0); }
+.about-preview__panel--2 { transform: translateX(28px); background: linear-gradient(135deg, var(--arka-blue), var(--arka-navy-deep)); }
+.about-preview__panel--3 { transform: translateX(0); background: var(--arka-gold); color: var(--arka-navy-deep); }
+
+.services-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+}
+
+.sustainability-teaser__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+
+  h2 { color: var(--arka-white); }
+  p { color: rgba(255,255,255,0.7); margin-bottom: 28px; }
+}
+
+.sustainability-teaser__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  div {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  strong { color: var(--arka-gold); font-family: var(--font-display); font-size: 1.05rem; }
+  span { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+}
+
+.industries-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+@media (max-width: 900px) {
+  .about-preview__grid,
+  .sustainability-teaser__grid { grid-template-columns: 1fr; }
+  .about-preview__visual { order: -1; }
+  .about-preview__panel--2 { transform: translateX(0); }
+}
+
+@media (max-width: 560px) {
+  .about-preview__mv { grid-template-columns: 1fr; }
+}

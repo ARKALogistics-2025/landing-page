@@ -1,0 +1,134 @@
+<arka-hero></arka-hero>
+<arka-stats></arka-stats>
+
+<!-- ABOUT PREVIEW -->
+<section class="section about-preview">
+  <div class="container about-preview__grid">
+    <div class="about-preview__text" arkaReveal>
+      <span class="eyebrow">Who We Are</span>
+      <h2>Building the Future of Indian Logistics</h2>
+      <p>
+        Founded in July 2025, ARKA Logistics is building integrated transportation solutions
+        spanning e-commerce fulfilment, freight, employee transportation and technology-enabled mobility.
+      </p>
+      <p>ARKA follows a client-first, safety-first and technology-driven operating model.</p>
+      <div class="about-preview__mv">
+        <div>
+          <h3>Our Mission</h3>
+          <p>Provide seamless and efficient logistics solutions that elevate employee travel experiences and contribute to our clients' overall success.</p>
+        </div>
+        <div>
+          <h3>Our Vision</h3>
+          <p>Become the logistics partner of choice, known for excellence, innovation and an unwavering focus on customer satisfaction across India and beyond.</p>
+        </div>
+      </div>
+      <a routerLink="/about" class="btn btn-outline-dark">Learn More About Us</a>
+    </div>
+    <div class="about-preview__visual" arkaReveal aria-hidden="true">
+      <div class="about-preview__panel about-preview__panel--1">
+        <span>⚙️</span>
+        <strong>Technology-Enabled</strong>
+      </div>
+      <div class="about-preview__panel about-preview__panel--2">
+        <span>⚡</span>
+        <strong>EV-First Vision</strong>
+      </div>
+      <div class="about-preview__panel about-preview__panel--3">
+        <span>🛡️</span>
+        <strong>Safety First</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY HIGHLIGHTS -->
+<section class="section section-alt">
+  <div class="container">
+    <arka-section-heading
+      eyebrow="Key Highlights"
+      heading="Why Enterprises Choose ARKA"
+      subheading="A client-first, technology-driven approach designed for scale."
+      [center]="true"
+    ></arka-section-heading>
+    <div class="grid-auto">
+      @for (item of highlights; track item.title) {
+        <arka-feature-card [icon]="item.icon" [title]="item.title" [description]="item.description"></arka-feature-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="section">
+  <div class="container">
+    <arka-section-heading
+      eyebrow="What We Do"
+      heading="Our Logistics Solutions"
+      subheading="Integrated transportation services built for enterprise, e-commerce and corporate clients."
+      [center]="true"
+    ></arka-section-heading>
+    <div class="grid-auto">
+      @for (service of featuredServices; track service.title) {
+        <arka-service-card [service]="service"></arka-service-card>
+      }
+    </div>
+    <div class="services-more" arkaReveal>
+      <a routerLink="/services" class="btn btn-outline-dark">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY TEASER -->
+<section class="section section-dark sustainability-teaser">
+  <div class="container sustainability-teaser__grid">
+    <div arkaReveal>
+      <span class="eyebrow">Sustainability</span>
+      <h2>Driving a Greener Future</h2>
+      <p>
+        ARKA Logistics is pivoting toward EV-based transportation to help clients reduce carbon
+        emissions and support India's transition toward sustainable mobility.
+      </p>
+      <a routerLink="/sustainability" class="btn btn-primary">Explore Our EV Vision</a>
+    </div>
+    <div class="sustainability-teaser__stats" arkaReveal>
+      <div><strong>EV First</strong><span>Fleet Vision</span></div>
+      <div><strong>Route Optimization</strong><span>Lower mileage &amp; emissions</span></div>
+      <div><strong>Green Tech</strong><span>Low-emission investment</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES PREVIEW -->
+<section class="section section-alt">
+  <div class="container">
+    <arka-section-heading
+      eyebrow="Industries We Serve"
+      heading="A Versatile Logistics Partner"
+      subheading="Serving enterprise clients across diverse sectors nationwide."
+      [center]="true"
+    ></arka-section-heading>
+    <div class="grid-auto industries-grid">
+      @for (industry of industries; track industry.name) {
+        <arka-industry-card [icon]="industry.icon" [name]="industry.name"></arka-industry-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="section">
+  <div class="container">
+    <arka-section-heading
+      eyebrow="What Sets Us Apart"
+      heading="Designed to Deliver, Built to Scale"
+      [center]="true"
+    ></arka-section-heading>
+    <div class="grid-auto">
+      @for (item of differentiators; track item.title) {
+        <arka-feature-card [icon]="item.icon" [title]="item.title" [description]="item.description"></arka-feature-card>
+      }
+    </div>
+  </div>
+</section>
+
+<arka-cta></arka-cta>

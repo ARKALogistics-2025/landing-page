@@ -1,0 +1,51 @@
+<section class="page-banner sustain-banner">
+  <div class="container">
+    <span class="eyebrow">Sustainability</span>
+    <h1>Driving a Greener Future</h1>
+    <p>
+      ARKA Logistics is pivoting toward EV-based transportation to help clients reduce carbon
+      emissions and support India's transition toward sustainable mobility.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <arka-section-heading
+      eyebrow="Our Direction"
+      heading="Building Toward an EV-First Future"
+      [center]="true"
+    ></arka-section-heading>
+    <div class="grid-auto">
+      @for (item of features; track item.title) {
+        <arka-feature-card [icon]="item.icon" [title]="item.title" [description]="item.description"></arka-feature-card>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark commitments-section">
+  <div class="container commitments-grid">
+    <div arkaReveal>
+      <span class="eyebrow">Eco Commitment</span>
+      <h2>Our Sustainable Mobility Commitments</h2>
+      <p>
+        ARKA Logistics remains committed to reducing its environmental impact and promoting
+        sustainable logistics practices. As we grow, we will actively pursue eco-friendly
+        solutions and work to minimize our carbon footprint.
+      </p>
+    </div>
+    <ul class="commitments-list" arkaReveal>
+      @for (item of commitments; track item) {
+        <li><span aria-hidden="true">🌱</span>{{ item }}</li>
+      }
+    </ul>
+  </div>
+</section>
+
+<arka-cta
+  heading="Ready to Reduce Your Transportation Footprint?"
+  text="Talk to us about building EV-based, route-optimized transportation into your logistics plan."
+  primaryLabel="Talk to ARKA"
+  secondaryLabel="Explore Employee Transport"
+></arka-cta>

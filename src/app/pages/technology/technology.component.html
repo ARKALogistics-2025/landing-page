@@ -1,0 +1,64 @@
+<section class="page-banner">
+  <div class="container">
+    <span class="eyebrow">Technology</span>
+    <h1>Technology That Moves Logistics Forward</h1>
+    <p>ARKA Logistics leverages technology to improve fleet visibility, transportation efficiency and customer experience.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container tech-grid">
+    <div class="grid-auto">
+      @for (item of features; track item.title) {
+        <arka-feature-card [icon]="item.icon" [title]="item.title" [description]="item.description"></arka-feature-card>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <arka-section-heading
+      eyebrow="Fleet Dashboard"
+      heading="A Live View Into Your Fleet"
+      subheading="An illustrative view of the operational visibility ARKA's technology platform is designed to provide."
+      [center]="true"
+    ></arka-section-heading>
+
+    <div class="dashboard" arkaReveal>
+      <div class="dashboard__top">
+        <div class="dashboard__stat">
+          <span>Active Vehicles</span>
+          <strong>128</strong>
+        </div>
+        <div class="dashboard__stat">
+          <span>On-Time Trips</span>
+          <strong>99.9%</strong>
+        </div>
+        <div class="dashboard__stat">
+          <span>Open SOS Alerts</span>
+          <strong>0</strong>
+        </div>
+        <div class="dashboard__stat">
+          <span>Avg. Route Efficiency</span>
+          <strong>92%</strong>
+        </div>
+      </div>
+      <div class="dashboard__map" aria-hidden="true">
+        <div class="dashboard__map-grid"></div>
+        <span class="dashboard__pin dashboard__pin--1"></span>
+        <span class="dashboard__pin dashboard__pin--2"></span>
+        <span class="dashboard__pin dashboard__pin--3"></span>
+        <span class="dashboard__pin dashboard__pin--4"></span>
+        <div class="dashboard__map-label">Live Fleet Map (illustrative)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<arka-cta
+  heading="See ARKA's Technology in Action"
+  text="Ask us about real-time tracking, fleet intelligence and reporting for your transportation program."
+  primaryLabel="Request a Demo"
+  secondaryLabel="View Employee Transport"
+></arka-cta>

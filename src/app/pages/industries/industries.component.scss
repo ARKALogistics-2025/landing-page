@@ -1,0 +1,54 @@
+.industries-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.reach-section { background: var(--arka-navy-deep); }
+
+.reach-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+
+  h2 { color: var(--arka-white); margin-bottom: 16px; }
+  p { color: rgba(255,255,255,0.65); }
+}
+
+.reach-map {
+  position: relative;
+  height: 320px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--arka-blue), var(--arka-navy));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.reach-map__outline { font-size: 5rem; opacity: 0.5; }
+
+.reach-map__pin {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--arka-gold);
+  box-shadow: 0 0 0 6px rgba(217,164,65,0.2);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 6px rgba(217,164,65,0.2); }
+  50% { box-shadow: 0 0 0 12px rgba(217,164,65,0.08); }
+}
+
+.reach-map__caption {
+  position: absolute;
+  bottom: 14px;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .reach-grid { grid-template-columns: 1fr; }
+}

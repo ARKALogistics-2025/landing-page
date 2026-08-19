@@ -1,0 +1,76 @@
+.dashboard {
+  background: var(--arka-navy-deep);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-strong);
+}
+
+.dashboard__top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.dashboard__stat {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  span { color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+  strong { color: var(--arka-gold); font-family: var(--font-display); font-size: 1.5rem; }
+}
+
+.dashboard__map {
+  position: relative;
+  height: 300px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--arka-blue), var(--arka-navy));
+}
+
+.dashboard__map-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dashboard__pin {
+  position: absolute;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--arka-gold);
+  box-shadow: 0 0 0 6px rgba(217,164,65,0.2);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+.dashboard__pin--1 { top: 30%; left: 20%; }
+.dashboard__pin--2 { top: 55%; left: 45%; animation-delay: .4s; }
+.dashboard__pin--3 { top: 25%; left: 68%; animation-delay: .8s; }
+.dashboard__pin--4 { top: 70%; left: 78%; animation-delay: 1.2s; }
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 6px rgba(217,164,65,0.2); }
+  50% { box-shadow: 0 0 0 12px rgba(217,164,65,0.08); }
+}
+
+.dashboard__map-label {
+  position: absolute;
+  bottom: 14px; left: 14px;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .dashboard__top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .dashboard__top { grid-template-columns: 1fr; }
+  .dashboard { padding: 20px; }
+}

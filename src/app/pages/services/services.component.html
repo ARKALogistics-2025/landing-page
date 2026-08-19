@@ -1,0 +1,24 @@
+<section class="page-banner">
+  <div class="container">
+    <span class="eyebrow">What We Do</span>
+    <h1>Our Logistics Solutions</h1>
+    <p>End-to-end transportation services engineered for enterprise, e-commerce and corporate clients across India.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-auto">
+      @for (service of services; track service.title) {
+        <arka-service-card [service]="service"></arka-service-card>
+      }
+    </div>
+  </div>
+</section>
+
+<arka-cta
+  heading="Not Sure Which Service Fits Your Business?"
+  text="Tell us about your transportation needs and our team will recommend the right solution."
+  primaryLabel="Talk to Our Team"
+  secondaryLabel="Explore Employee Transport"
+></arka-cta>

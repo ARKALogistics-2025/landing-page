@@ -1,0 +1,86 @@
+<section class="page-banner">
+  <div class="container">
+    <span class="eyebrow">About ARKA Logistics</span>
+    <h1>Building the Future of Indian Logistics</h1>
+    <p>A client-first, safety-first and technology-driven operating model.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about-body">
+    <div arkaReveal>
+      <p class="lead">
+        Founded in July 2025, ARKA Logistics is building integrated transportation solutions
+        spanning e-commerce fulfilment, freight, employee transportation and technology-enabled mobility.
+      </p>
+      <p>
+        Our long-term vision is to build a technology-enabled, safety-first and sustainability-focused
+        logistics network across India — one that enterprises, e-commerce companies and corporate
+        employee transportation clients can depend on.
+      </p>
+    </div>
+
+    <div class="mv-grid" arkaReveal>
+      <div class="mv-card">
+        <span class="eyebrow">Our Mission</span>
+        <p>
+          Our mission is to provide seamless and efficient logistics solutions that elevate
+          employee travel experiences and contribute to our clients' overall success.
+        </p>
+      </div>
+      <div class="mv-card mv-card--gold">
+        <span class="eyebrow">Our Vision</span>
+        <p>
+          Our vision is to become the logistics partner of choice, known for excellence,
+          innovation and an unwavering focus on customer satisfaction across India and beyond.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <arka-section-heading
+      eyebrow="Why Choose ARKA"
+      heading="A Logistics Partner Built for Enterprise Scale"
+      [center]="true"
+    ></arka-section-heading>
+    <div class="grid-auto">
+      @for (item of whyChoose; track item.title) {
+        <arka-feature-card [icon]="item.icon" [title]="item.title" [description]="item.description"></arka-feature-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- SCALABLE GROWTH / INVESTOR SECTION -->
+<section class="section growth-section">
+  <div class="container">
+    <arka-section-heading
+      eyebrow="Built for Scalable Growth"
+      heading="A Capital-Efficient Path to Pan-India Expansion"
+      subheading="Figures below reflect management estimates and targets, not guaranteed financial outcomes."
+      [center]="true"
+    ></arka-section-heading>
+
+    <div class="growth-grid" arkaReveal>
+      @for (card of growthCards; track card.label) {
+        <div class="growth-card">
+          <span class="growth-card__tag">{{ card.tag }}</span>
+          <strong>{{ card.value }}</strong>
+          <span>{{ card.label }}</span>
+        </div>
+      }
+    </div>
+
+    <p class="growth-note" arkaReveal>
+      Growth is expected to be driven by enterprise demand, diversified revenue opportunities across
+      freight, e-commerce and employee transportation, disciplined fleet expansion, our EV transition,
+      continued technology investment, and phased Pan-India expansion. All figures are management
+      estimates and targets, and actual results may vary.
+    </p>
+  </div>
+</section>
+
+<arka-cta></arka-cta>
