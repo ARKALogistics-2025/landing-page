@@ -54,33 +54,5 @@
   </div>
 </section>
 
-<!-- SCALABLE GROWTH / INVESTOR SECTION -->
-<section class="section growth-section">
-  <div class="container">
-    <arka-section-heading
-      eyebrow="Built for Scalable Growth"
-      heading="A Capital-Efficient Path to Pan-India Expansion"
-      subheading="Figures below reflect management estimates and targets, not guaranteed financial outcomes."
-      [center]="true"
-    ></arka-section-heading>
-
-    <div class="growth-grid" arkaReveal>
-      @for (card of growthCards; track card.label) {
-        <div class="growth-card">
-          <span class="growth-card__tag">{{ card.tag }}</span>
-          <strong>{{ card.value }}</strong>
-          <span>{{ card.label }}</span>
-        </div>
-      }
-    </div>
-
-    <p class="growth-note" arkaReveal>
-      Growth is expected to be driven by enterprise demand, diversified revenue opportunities across
-      freight, e-commerce and employee transportation, disciplined fleet expansion, our EV transition,
-      continued technology investment, and phased Pan-India expansion. All figures are management
-      estimates and targets, and actual results may vary.
-    </p>
-  </div>
-</section>
 
 <arka-cta></arka-cta>
